@@ -1,0 +1,108 @@
+.titulo {
+       font-family:CalcitePro-Black;
+    font-size: 56px;
+    color: rgb(254,197,61);
+    position: absolute;
+    top: 40px;
+	left: 316px;
+	height: 56px;
+}
+
+.titulo2 {
+    position: absolute;
+    top: 110px;
+    left: 574px;
+   font-family:TheMixB-W8ExtraBold;
+    color: rgb(254,197,61);
+}
+
+
+
+.scan-img{
+    position: absolute;
+    left: 471px;
+    top: 162px;
+	width: 406px;
+	height: 406px;
+}
+
+.scan-text{
+    position: absolute;
+    top: 538px;
+    left: 538px;
+	width: 196px;
+	height: 104px;
+}
+
+.fondo-aviso{
+    
+    position: absolute;
+    top: 176px;
+    left: 329px;
+	width: 626px;
+	height: 434px;
+}
+
+.texto-aviso{
+    
+    position: relative;
+    top: 286px;
+    left: 396px;
+	width: 443px;
+	height: 146px;
+}
+
+.texto-p{
+    
+    font-size: 20px;
+    color: rgb(103,44,17);
+    font-family: TheMixB-W6SemiBold;
+}
+.titulo-aviso{
+    position: absolute;
+    top: 250px;
+    left: 466px;
+    font-size: 33px;
+    color: rgb(103,44,17);
+    font-family: TheMixB-W9Black;
+    
+}
+
+
+
+
+#acepto {
+     background-image: url(../assets/acepto1_tablet_140_50.png) ;
+     /*background-size: 100px 130px;*/
+     height: 52px;
+     width: 142px;
+}
+
+@font-face{
+   font-family:"CalcitePro-Black";
+   src:url(CalcitePro-Black.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W6SemiBold";
+   src:url(TheMixB-W6SemiBold.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W7Bold";
+   src:url(TheMixB-W7Bold.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W8ExtraBold";
+   src:url(TheMixB-W8ExtraBold.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W9Black";
+   src:url(TheMixB-W9Black.otf) format("opentype");
+}
