@@ -80,29 +80,29 @@
 
 @font-face{
    font-family:"CalcitePro-Black";
-   src:url(CalcitePro-Black.otf) format("opentype");
+   src:url(../fonts/CalcitePro-Black.otf) format("opentype");
 }
 
 
 @font-face{
    font-family:"TheMixB-W6SemiBold";
-   src:url(TheMixB-W6SemiBold.otf) format("opentype");
+   src:url(../fonts/TheMixB-W6SemiBold.otf) format("opentype");
 }
 
 
 @font-face{
    font-family:"TheMixB-W7Bold";
-   src:url(TheMixB-W7Bold.otf) format("opentype");
+   src:url(../fonts/TheMixB-W7Bold.otf) format("opentype");
 }
 
 
 @font-face{
    font-family:"TheMixB-W8ExtraBold";
-   src:url(TheMixB-W8ExtraBold.otf) format("opentype");
+   src:url(../fonts/TheMixB-W8ExtraBold.otf) format("opentype");
 }
 
 
 @font-face{
    font-family:"TheMixB-W9Black";
-   src:url(TheMixB-W9Black.otf) format("opentype");
+   src:url(../fonts/TheMixB-W9Black.otf) format("opentype");
 }
