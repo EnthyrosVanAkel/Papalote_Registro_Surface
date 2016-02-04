@@ -116,8 +116,31 @@
 
 .escribe-img{
     position: absolute;
-    top: 10px;
-    left: 10px;
+    right: 890px;
+    bottom: 260px;
+}
+
+#regresar {
+    position: absolute;
+    top: 280px;
+    left: 15px;
+     /*background-size: 100px 130px;*/
+     height: 50px;
+     width: 140px;
+    background-size: 150px 50px;
+    background-repeat: no-repeat;
+}
+
+
+#continuar {
+    position: absolute;
+    top: 280px;
+    right: 15px;
+     /*background-size: 100px 130px;*/
+     height: 50px;
+     width: 140px;
+    background-size: 150px 50px;
+    background-repeat: no-repeat;
 }
 
 @font-face{
