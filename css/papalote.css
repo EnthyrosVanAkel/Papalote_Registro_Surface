@@ -156,27 +156,50 @@
 
 #foto-regresar {
     position: absolute;
-    top: 700px;
-    left: 15px;
+    top: 650px !important;
+    right: 1000px !important;
      /*background-size: 100px 130px;*/
-     height: 50px;
-     width: 140px;
+     height: 50px !important;
+     width: 140px !important;
     background-size: 150px 50px;
     background-repeat: no-repeat;
 }
 
+#foto-tomar {
+    position: absolute;
+    top: 500px !important;
+    left: 430px !important;
+     /*background-size: 100px 130px;*/
+     height: 75px !important;
+     width: 75px !important;
+    background-size: 70px 70px !important;
+    background-color:transparent !important;
+    background-repeat: no-repeat !important;
+}
+
 .foto-marco{
     position: absolute;
-    top: 100px;
-    left: 250px;
+    top: 50px !important;
+    left: 250px !important;
     
 }
 
 .foto-silueta{
     position: absolute;
-    top: 180px;
-    left: 350px;
+    top: 130px !important;
+    left: 350px !important;
     
+}
+
+.foto-texto {
+    position: absolute ;
+    top: 350px !important;
+    left: 120px !important;
+    height: 30px !important;
+     width: 700px !important;
+    font-size: 30px;
+   font-family:TheMixB-W8ExtraBold !important;
+    color: rgb(254,197,61) !important;
 }
 
 @font-face{
