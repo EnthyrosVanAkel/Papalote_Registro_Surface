@@ -89,13 +89,23 @@
                 </section>
                         
                 <section data-background="assets/fondo_1366_768.png">
-                    <video id="video" width="640" height="480" autoplay></video>
-                    <button id="snap">Snap Photo</button>
-                    <canvas id="canvas" width="640" height="480"></canvas>
+                    div class="select" style="display:none">
+                <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+              </div>
+
+              <div class="select" style="display:none">
+                <label for="videoSource">Video source: </label><select id="videoSource"></select>
+              </div>
+
+
+            <video class="stretch" muted autoplay style="width:1230px!important; height:692px!important; padding-top:30px"></video>
+            <button id="snap">Snap Photo</button>
+                        
                 </section>
                         
                     <section data-background="assets/fondo_1366_768.png">
                     <img src="assets/aviso_626_434.png" class="fondo-aviso">
+                        <canvas id="canvas" width="640" height="480"></canvas>
                 </section>
 
             </div>
@@ -109,41 +119,82 @@
             // https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize();
             
-            // Put event listeners into place
-            window.addEventListener("DOMContentLoaded", function() {
-                // Grab elements, create settings, etc.
-                var canvas = document.getElementById("canvas"),
-                context = canvas.getContext("2d"),
-                    video = document.getElementById("video"),
-                    videoObj = { "video": true },
-                    errBack = function(error) {
-                        console.log("Video capture error: ", error.code); 
-                    };
+            // Camera 
+    'use strict';
 
-                // Put video listeners into place
-                if(navigator.getUserMedia) { // Standard
-                    navigator.getUserMedia(videoObj, function(stream) {
-                        video.src = stream;
-                        video.play();
-                    }, errBack);
-                } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
-                    navigator.webkitGetUserMedia(videoObj, function(stream){
-                        video.src = window.webkitURL.createObjectURL(stream);
-                        video.play();
-                    }, errBack);
-                }
-                else if(navigator.mozGetUserMedia) { // Firefox-prefixed
-                    navigator.mozGetUserMedia(videoObj, function(stream){
-                        video.src = window.URL.createObjectURL(stream);
-                        video.play();
-                    }, errBack);
-                }
-            }, false);
-            
-            // Trigger photo take
-            document.getElementById("snap").addEventListener("click", function() {
-                context.drawImage(video, 0, 0, 640, 480);
-            });
+    var videoElement = document.querySelector('video');
+    var audioSelect = document.querySelector('select#audioSource');
+    var videoSelect = document.querySelector('select#videoSource');
+    var context = canvas.getContext("2d");
+
+    navigator.getUserMedia = navigator.webkitGetUserMedia;
+    navigator.getUserMedia = navigator.getUserMedia ||
+    navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+    function gotSources(sourceInfos) {
+      for (var i = 0; i !== sourceInfos.length; ++i) {
+        var sourceInfo = sourceInfos[i];
+        var option = document.createElement('option');
+        option.value = sourceInfo.id;
+
+        if (sourceInfo.kind === 'audio') {
+          option.text = sourceInfo.label || 'microphone ' +
+            (audioSelect.length + 1);
+          audioSelect.appendChild(option);
+        } else if (sourceInfo.kind === 'video') {
+          option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+          videoSelect.appendChild(option);
+        } else {
+          console.log('Some other kind of source: ', sourceInfo);
+        }
+
+      }
+    }
+
+    if (typeof MediaStreamTrack === 'undefined' ||
+        typeof MediaStreamTrack.getSources === 'undefined') {
+      alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
+    } else {
+      MediaStreamTrack.getSources(gotSources);
+    }
+
+    function successCallback(stream) {
+      window.stream = stream; // make stream available to console
+      videoElement.src = window.URL.createObjectURL(stream);
+      videoElement.play();
+    }
+
+    function errorCallback(error) {
+      console.log('navigator.getUserMedia error: ', error);
+    }
+
+    function start() {
+      if (!!window.stream) {
+        videoElement.src = null;
+        window.stream.stop();
+      }
+      var audioSource = audioSelect.value;
+      var videoSource = 'fd246cc6d5ee6c9038aa3c3f20519a4168fded0743c2e1a26f38db5188d17ddc';
+      var constraints = {
+        audio: {
+          optional: [{
+            sourceId: audioSource
+          }]
+        },
+        video: {
+          optional: [{
+            sourceId: videoSource
+          }]
+        }
+      };
+      navigator.getUserMedia(constraints, successCallback, errorCallback);
+    }
+
+    start();
+
+    document.getElementById("snap").addEventListener("click", function() {
+      context.drawImage(videoElement, 0, 0, 640, 480);
+    });
         </script>
 
     </body>
