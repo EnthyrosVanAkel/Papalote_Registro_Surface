@@ -1,125 +1,211 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-        <title>Registro Surface </title>
+      <title>Registro RFID Museo Papalote | Poppler | Cocolab</title>
 
-        <meta name="description" content="Registro de pulseras">
-        <meta name="author" content="The Vladman">
 
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-        <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/styles.css" id="theme">
 
-        <link rel="stylesheet" href="css/papalote.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    </head>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-    <body>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-        <div class="reveal">
+  <body>
 
-            <!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides" style="width:1366px!important;">
-                <section data-background="assets/fondo_1366_768.png" class="center">
-                        <h1 class="titulo">¡Preparate para la aventura!</h1>
-                        <h2 class="titulo2">Ingresa tus datos</h2>
-                        <img src="assets/logo_406_406.png" class="scan-img">
-                        <img src="assets/RFID_surface_194_103.png" class="scan-text">
-                        
-                </section>
+    <div class="reveal">
 
-                <section data-background="assets/fondo_1366_768.png" class="center">
-                    <img src="assets/aviso_626_434.png" class="fondo-aviso">
-                    
-                    <div class="texto-aviso">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides" style="width:1230px!important;">
+      
+        <section data-background="assets/fondo_1366_768.png" class="center">
+        <div>
+            <p class="scan-text">
+              <h1 class="titulo">¡Prepárate para la aventura!</h1>
+
+            </p>
+          </div>
+        <img src="assets/logo_406_406.png" class="papalote-logo"> 
+        <img src="assets/RFID_surface_194_103.png" class="scan-img"> 
+        </section>
+
+        <section data-background="assets/fondo_1366_768.png" class="center">
+          <img src="assets/aviso.png" class="fondo-aviso">
+          <div class="texto-aviso">
                         <h1 class="titulo-aviso">AVISO DE PRIVACIDAD</h1>
                         <p class="texto-p">
                     
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                     </p>
-                        <button style="background-image:url(assets/acepto1_tablet_140_50.png)" id="acepto" >
-                            <button style="background-image:url(assets/acepto1_tablet_140_50.png)" id="noacepto" >
-
+                    <a class="btn btn-noacepto" onclick="backSlide();"></a>
+                    <a class="btn btn-acepto" onclick="nextSlide();"></a>
                     </div>
-                    
-                </section>
-                        
-                        
-                <section data-background="assets/fondo_1366_768.png" class="center">
-                    
-                    <div class="text-scroll">
-                        <h1 class="titulo-scroll">AVISO DE PRIVACIDAD</h1>
-                        <p class="texto-p">
-                    
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    </p>
-                        <button style="background-image:url(assets/acepto1_tablet_140_50.png)" id="acepto" >
-                            <button style="background-image:url(assets/acepto1_tablet_140_50.png)" id="noacepto" >
+          
+        </section>
 
-                    </div>
-                    
-                </section>
-                        
-                        
-                <section data-background="assets/fondo_1366_768.png">
-                    <img src="assets/instrucci%C3%B3n1_243_56.png" class="escribe-img">
-                    
-                    <input type="email" name="correo" class="correo"  size="100">
-                    
-                    <button style="background-image:url(assets/regresar1_tablet_140_50.png)" id="regresar" >
-                    <button style="background-image:url(assets/continuar1_tablet_140_50.png)" id="continuar" >
+        <section data-background="assets/fondo_1366_768.png" class="center">
+          <img src="assets/instrucci%C3%B3n1_243_56.png" class="escribe-img">
+          <input type="email" name="correo" class="correo" placeholder="Escribe aquí tu correo electrónico">
+          <a class="btn btn-regresar" onclick="backSlide();"></a>
+          <a class="btn btn-continuar" onclick="ObtenerDatos();"></a>
+        </section>
 
-                </section>
-                        
-                <section data-background="assets/fondo_1366_768.png">
-                    
-                    <img src="assets/marco1_434_434.png" class="foto-marco">
-                    <img src="assets/silueta_241_297.png" class="foto-silueta">
-                    
-                    <button style="background-image:url(assets/camara1_tablet_70_70.png)" id="foto-tomar" >
-                    <button style="background-image:url(assets/regresar1_tablet_140_50.png)" id="foto-regresar" >
-                    
-                    <h3 class="foto-texto">Coloca tu cara dentro de la silueta y toca la cámara</h3>
-                </section>
-                        
-                <section data-background="assets/fondo_1366_768.png">
-                    <div class="select" style="display:none">
+        <section data-background="assets/fondo_1366_768.png" class="center">
+
+          <div class="select">
                 <label for="audioSource">Audio source: </label><select id="audioSource"></select>
               </div>
 
-              <div class="select" style="display:none">
+              <div class="select">
                 <label for="videoSource">Video source: </label><select id="videoSource"></select>
               </div>
 
 
-            <video class="stretch" muted autoplay style="width:1230px!important; height:692px!important; padding-top:30px"></video>
-            <button id="snap">Snap Photo</button>
-                        
-                </section>
-                        
-                    <section data-background="assets/fondo_1366_768.png">
-                    <img src="assets/aviso_626_434.png" class="fondo-aviso">
-                        <canvas id="canvas" width="640" height="480"></canvas>
-                </section>
+            <video class="stretch" muted autoplay></video>
+              <img src="assets/silueta_241_297.png" class="foto-silueta">
+              <a class="btn btn-tomar-regresar" onclick="backSlide();"></a>
+              <button id="snap" onclick="nextSlide();"></button>
 
-            </div>
+              <h2 class='texto-foto'>Coloca tu cara dentro de la silueta y toca la cámara.</h2>
 
-        </div>
-        <script src="js/reveal.js"></script>
-         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script>
+        </section>
 
-            // Full list of configuration options available at:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize();
-            
-            // Camera 
+        <section data-background="assets/fondo_1366_768.png" class="center">
+          <img src="assets/instruccion2.png" class="foto-repetir">
+          <h2 class='texto-final'>¡Bien, Nombre, estas list@ para la aventura!</h2>
+
+            <canvas id="canvas" style="border-radius:100%!important;" width="500" height="500"></canvas>
+ 
+            <a class="btn btn-si" onclick="backPhoto();"></a>
+          <a class="btn btn-no" onclick="fin();"></a>
+        </section>
+
+      </div>
+
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+   
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="http://localhost:1235/socket.io/socket.io.js"></script>
+
+
+<script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: false },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+    <script>
+ //Initialize RFID Reader
+
+    if (Reveal.isFirstSlide())
+    {
+
+      var socket = io.connect("http://localhost:1235");
+
+      socket.on("rfid", function (data)
+        { 
+            rfid1 = data.rfid;
+            rfid = rfid1.replace(/\W/g,'');
+            console.log(rfid)
+            Reveal.next();
+        });
+
+      
+    }else{
+      var socket = io.connect("http://localhost:1235");
+      socket.on("rfid", function (data)
+      {
+
+      });
+      socket.on("refresh", function (data){
+        console.log("time to reload");
+         location.reload();
+      });
+
+    }
+
+    </script>
+      <script>
+      function nextSlide(){
+      Reveal.next();
+    }
+    function backSlide(){
+      Reveal.prev();
+    }
+
+
+    function home(){
+      Reveal.slide(0);
+      start();
+      //Esconde 
+      $(".texto-final").css("display","none");
+      $("#home").css("display","none");
+      //muestra
+      $(".foto-repetir").css("display","block");
+      $(".btn-no").css("display","block");
+      $(".btn-si").css("display","block");
+    }
+
+    function backPhoto(){
+      start();
+      Reveal.prev();
+    }
+
+    function fin(){
+      //Muestra 
+      $(".texto-final").css("display","block");
+      $("#home").css("display","block");
+      //Esconde
+      $(".foto-repetir").css("display","none");
+      $(".btn-no").css("display","none");
+      $(".btn-si").css("display","none");
+
+    }
+    </script>
+
+
+    <script>
+ // Camera 
     'use strict';
 
     var videoElement = document.querySelector('video');
@@ -193,9 +279,13 @@
     start();
 
     document.getElementById("snap").addEventListener("click", function() {
-      context.drawImage(videoElement, 0, 0, 640, 480);
+      context.drawImage(videoElement, 0, 0, 500, 500);
     });
-        </script>
 
-    </body>
+
+    //
+
+    </script>
+    
+  </body>
 </html>

@@ -1,11 +1,7 @@
 .titulo {
-       font-family:CalcitePro-Black;
+    font-family:CalcitePro-Black;
     font-size: 56px;
     color: rgb(254,197,61);
-    position: absolute;
-    top: 40px;
-	left: 116px;
-	height: 56px;
 }
 
 .titulo2 {
@@ -117,7 +113,7 @@
 .escribe-img{
     position: absolute;
     right: 890px;
-    bottom: 190px;
+    bottom: 220px;
 }
 
 #regresar {

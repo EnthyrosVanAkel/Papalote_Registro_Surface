@@ -1,0 +1,358 @@
+.slides{
+}
+
+.scan-img{
+	width: 194px;
+	height: 103px;
+    position: absolute;
+    top: 580px;
+    left: 500px;
+}
+
+.papalote-logo{
+	position: relative!important;
+	top: 100px!important;
+    left: 10px!important;
+	width: 406px;
+    height: 406px;
+
+}
+
+.titulo {
+	position: absolute!important;
+	bottom: 350px!important;
+    left: 30px!important;
+    font-family:CalcitePro-Black!important;
+    font-size: 66pt!important;
+    color: rgb(254,197,61)!important;
+    width: 1150px!important;
+    text-transform: none!important;
+}
+
+
+.fondo-aviso{
+    
+    
+	width: 800px!important;
+	height: 560px!important;
+}
+
+.texto-aviso{
+    position: absolute!important;
+	top: 50px!important;
+    left: 300px!important;
+    width: 606px!important;
+	height: 434px!important;
+}
+
+.texto-p{
+    
+    position: absolute!important;
+    top: 50px!important;
+    left: 10px!important;
+    font-size: 22px!important;
+    color: rgb(103,44,17)!important;
+    font-family: TheMixB-W6SemiBold!important;
+    text-align: justify!important;
+}
+.titulo-aviso{
+    font-size: 33px!important;
+    color: rgb(103,44,17)!important;
+    font-family: TheMixB-W9Black!important;
+    
+}
+
+.btn-acepto {
+	position: absolute!important;
+	top: 400px!important;
+	left: 300px!important;
+	height: 84px!important;
+	width: 232px!important;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 1px!important;
+	padding: 10px 50px 10px 50px!important;
+	background: url('../assets/acepto1.png') no-repeat!important;
+}
+
+.btn-acepto:hover {
+	background: url('../assets/acepto2.png') no-repeat!important;
+
+}
+
+.btn-noacepto {
+	position: absolute!important;
+	top: 400px!important;
+	left: 50px!important;
+	height: 84px!important;
+	width: 232px!important;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 1px!important;
+	padding: 10px 50px 10px 50px!important;
+	background: url('../assets/noacepto1.png') no-repeat!important;
+
+}
+
+.btn-noacepto:hover {
+	background: url('../assets/noacepto2.png') no-repeat!important;
+}
+
+.escribe-img{
+    position: absolute!important;
+    right: 940px!important;
+    bottom: 350px!important;
+}
+
+
+.select{
+	position: absolute!important;
+	top: 10000px!important;
+	display: hidden!important;
+}
+
+.stretch{
+	border-radius:100% !important;
+	overflow: hidden!important;
+	position: relative!important;
+	bottom: 10px!important;
+	left: 120px!important;
+	width:500px!important; 
+	height:500px!important;
+	z-index: 1!important;
+}
+
+input[type=email] {
+	position: relative!important;
+	bottom: 200px!important;
+	width: 800px!important;
+    font-family: TheMixB-W8ExtraBold;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 3px solid white; 
+	color: rgb(254,197,61);
+	font-size: 30px!important;
+	padding: 5px 10px 5px 10px;
+	background: rgba(255,255,255,0);
+	margin: 0 0 10px 0;
+	text-align: center;	
+}
+
+.btn-regresar {
+	position: absolute!important;
+	bottom: 60px!important;
+	left: 20px!important;
+	height: 84px!important;
+	width: 232px!important;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 1px!important;
+	padding: 10px 50px 10px 50px!important;
+	background: url('../assets/regresar1.png') no-repeat!important;
+
+}
+
+.btn-regresar:hover {
+	background: url('../assets/regresar2.png') no-repeat!important;
+}
+.btn-continuar {
+	position: absolute!important;
+	bottom: 60px!important;
+	right: 20px!important;
+	height: 84px!important;
+	width: 232px!important;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 1px!important;
+	padding: 10px 50px 10px 50px!important;
+	background: url('../assets/continuar1.png') no-repeat!important;
+
+}
+
+.btn-continuar:hover {
+	background: url('../assets/continuar2.png') no-repeat!important;
+}
+
+
+.btn-tomar-regresar {
+	position: absolute!important;
+	top: 600px!important;
+	left: 100px!important;
+	height: 84px!important;
+	width: 232px!important;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 1px!important;
+	padding: 10px 50px 10px 50px!important;
+	background: url('../assets/regresar1.png') no-repeat!important;
+
+}
+
+.btn-tomar-regresar:hover {
+	background: url('../assets/regresar2.png') no-repeat!important;
+}
+
+
+.foto-silueta{
+    position: relative!important;
+    bottom: 200px !important;
+    right: 300px !important;
+    z-index: 2;
+
+}
+
+#snap {
+	position: absolute!important;
+	top: 550px!important;
+	left: 550px!important;
+	height: 116px!important;
+	width: 116px!important;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom:none; 
+	background: url('../assets/camara1.png') no-repeat!important;
+
+}
+
+#snap:hover {
+	background: url('../assets/camara2.png') no-repeat!important;
+}
+
+
+
+
+#videoElement {
+	
+    width: 800px!important;
+    height: 800px!important;
+}
+
+
+.texto-foto {
+	position: absolute!important;
+	top: 700px!important;
+	left: 300px!important;
+    font-size: 20pt!important;
+   font-family:TheMixB-W8ExtraBold!important;
+    color: rgb(254,197,61)!important;
+     height: 40px!important;
+     text-transform: none!important;
+}
+
+
+.btn-si {
+	position: absolute!important;
+	top: 640px!important;
+	left: 350px!important;
+	height: 84px!important;
+	width: 232px!important;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 1px!important;
+	padding: 10px 50px 10px 50px!important;
+	background: url('../assets/si1.png') no-repeat!important;
+
+}
+
+.btn-si:hover {
+	background: url('../assets/si2.png') no-repeat!important;
+}
+
+
+
+.btn-no {
+	position: absolute!important;
+	top: 640px!important;
+	right: 300px!important;
+	height: 84px!important;
+	width: 232px!important;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 1px!important;
+	padding: 10px 50px 10px 50px!important;
+	background: url('../assets/no1.png') no-repeat!important;
+
+}
+
+.btn-no:hover {
+	background: url('../assets/no2.png') no-repeat!important;
+}
+
+#canvas{
+	position: absolute!important;
+	left: 350px!important;
+    top: 100px!important;
+}
+
+.foto-repetir{
+    position: absolute!important;
+    left: 10px!important;
+    top: 10px!important;
+    max-height: 50px!important;
+    max-width: 200!important;
+}
+
+
+.texto-final {
+	position: absolute!important;
+	top: 10px!important;
+    left: 200px!important;
+    font-size: 40px !important;
+   font-family:TheMixB-W8ExtraBold!important;
+    color: rgb(254,197,61)!important;
+     height: 40px!important;
+     text-transform: none!important;
+     display: none;
+}
+
+
+#home {
+	position: absolute!important;
+	top: 600px!important;
+	left: 550px!important;
+	height: 116px!important;
+	width: 116px!important;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom:none; 
+	background: url('../assets/home1.png') no-repeat!important;
+	display: none;
+
+}
+
+#home:hover {
+	background: url('../assets/home2.png') no-repeat!important;
+}
+
+
+@font-face{
+   font-family:"CalcitePro-Black";
+   src:url(../fonts/CalcitePro-Black.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W6SemiBold";
+   src:url(../fonts/TheMixB-W6SemiBold.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W7Bold";
+   src:url(../fonts/TheMixB-W7Bold.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W8ExtraBold";
+   src:url(../fonts/TheMixB-W8ExtraBold.otf) format("opentype");
+}
+
+
+@font-face{
+   font-family:"TheMixB-W9Black";
+   src:url(../fonts/TheMixB-W9Black.otf) format("opentype");
+}
