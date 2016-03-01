@@ -40,19 +40,19 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides" style="width:1230px!important;">
       
-        <section data-background="assets/fondo_1366_768.png" class="center">
+        <section data-background="assets/fondo.png" class="center">
         <div>
             <p class="scan-text">
               <h1 class="titulo">¡Prepárate para la aventura!</h1>
-
             </p>
           </div>
-        <img src="assets/logo_406_406.png" class="papalote-logo"> 
-        <img src="assets/RFID_surface_194_103.png" class="scan-img"> 
+        <img src="assets/mariposa.png" class="papalote-logo"> 
+        <img src="assets/rfid.png" class="scan-img"> 
+        <h2 class="titulo2">Pasa aquí tu brazalete.</h2>
         </section>
 
-        <section data-background="assets/fondo_1366_768.png" class="center">
-          <img src="assets/aviso.png" class="fondo-aviso">
+        <section data-background="assets/fondo.png" class="center">
+          <img src="assets/caja.png" class="fondo-aviso">
           <div class="texto-aviso">
                         <h1 class="titulo-aviso">AVISO DE PRIVACIDAD</h1>
                         <p class="texto-p">
@@ -65,14 +65,14 @@
           
         </section>
 
-        <section data-background="assets/fondo_1366_768.png" class="center">
-          <img src="assets/instrucci%C3%B3n1_243_56.png" class="escribe-img">
+        <section data-background="assets/fondo.png" class="center">
+          <img src="assets/instruccion1.png" class="escribe-img">
           <input type="email" name="correo" class="correo" placeholder="Escribe aquí tu correo electrónico">
           <a class="btn btn-regresar" onclick="backSlide();"></a>
           <a class="btn btn-continuar" onclick="ObtenerDatos();"></a>
         </section>
 
-        <section data-background="assets/fondo_1366_768.png" class="center">
+        <section data-background="assets/fondo.png" class="center">
 
           <div class="select">
                 <label for="audioSource">Audio source: </label><select id="audioSource"></select>
@@ -84,15 +84,14 @@
 
 
             <video class="stretch" muted autoplay></video>
-              <img src="assets/silueta_241_297.png" class="foto-silueta">
-              <a class="btn btn-tomar-regresar" onclick="backSlide();"></a>
+              <img src="assets/cara.png" class="foto-silueta">
               <button id="snap" onclick="nextSlide();"></button>
 
               <h2 class='texto-foto'>Coloca tu cara dentro de la silueta y toca la cámara.</h2>
 
         </section>
 
-        <section data-background="assets/fondo_1366_768.png" class="center">
+        <section data-background="assets/fondo.png" class="center">
           <img src="assets/instruccion2.png" class="foto-repetir">
           <h2 class='texto-final'>¡Bien, Nombre, estas list@ para la aventura!</h2>
 
@@ -105,14 +104,9 @@
       </div>
 
     </div>
-    <script src="lib/js/head.min.js"></script>
+  <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
-   
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="http://localhost:1235/socket.io/socket.io.js"></script>
-
-
-<script>
+    <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
@@ -127,15 +121,65 @@
           { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: false },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true }
         ]
       });
 
     </script>
-
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://localhost:1235/socket.io/socket.io.js"></script>
     <script>
- //Initialize RFID Reader
+
+
+    //Facebook and Twitter login
+
+    var signup = {};
+    var baseUrl = 'http://cocoplan.mx:9000/';
+    var rfid;
+    var rfid1;
+
+    function nextSlide(){
+      Reveal.next();
+    }
+
+    (function(){
+    
+    this.loginOauth = function(provider){
+      el = document.getElementById("overlay");
+      el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+      alert(rfid);
+
+        var htmlIf = '<iframe id="if-login" onload="loadIF(this.contentWindow.location);" src="'+baseUrl+'auth/'+provider+'/'+rfid+'" width="500px" height="320px" style="position:absolute;top:-50px"></iframe>';
+        document.getElementById('overlay').innerHTML = htmlIf;
+
+        console.log(htmlIf);
+    }
+
+    }).apply(signup);
+
+    function loadIF(url){
+    
+      if(url == baseUrl){
+          $.get(baseUrl+'api/visitors/'+rfid, function(data) {
+              /*optional stuff to do after success */
+              console.log(data);
+              alert(JSON.stringify(data));
+          });
+
+          document.getElementById('if-wrap').innerHTML = '';
+          // document.getElementById('if-wrap').style.display = 'none';
+      }
+    }
+
+    function overlay() {
+      el = document.getElementById("overlay");
+      el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+    }
+</script>
+<script>
+
+    //Initialize RFID Reader
 
     if (Reveal.isFirstSlide())
     {
@@ -164,48 +208,9 @@
 
     }
 
-    </script>
-      <script>
-      function nextSlide(){
-      Reveal.next();
-    }
-    function backSlide(){
-      Reveal.prev();
-    }
-
-
-    function home(){
-      Reveal.slide(0);
-      start();
-      //Esconde 
-      $(".texto-final").css("display","none");
-      $("#home").css("display","none");
-      //muestra
-      $(".foto-repetir").css("display","block");
-      $(".btn-no").css("display","block");
-      $(".btn-si").css("display","block");
-    }
-
-    function backPhoto(){
-      start();
-      Reveal.prev();
-    }
-
-    function fin(){
-      //Muestra 
-      $(".texto-final").css("display","block");
-      $("#home").css("display","block");
-      //Esconde
-      $(".foto-repetir").css("display","none");
-      $(".btn-no").css("display","none");
-      $(".btn-si").css("display","none");
-
-    }
-    </script>
-
-
-    <script>
- // Camera 
+</script>
+<script>
+    // Camera 
     'use strict';
 
     var videoElement = document.querySelector('video');
@@ -279,13 +284,12 @@
     start();
 
     document.getElementById("snap").addEventListener("click", function() {
-      context.drawImage(videoElement, 0, 0, 500, 500);
+      context.drawImage(videoElement, 0, 0, 640, 480);
     });
 
 
     //
 
     </script>
-    
   </body>
 </html>

@@ -2,25 +2,25 @@
 }
 
 .scan-img{
-	width: 194px;
-	height: 103px;
+	width: 100px;
+	height: 100px;
     position: absolute;
     top: 580px;
-    left: 500px;
+    left: 550px;
 }
 
 .papalote-logo{
 	position: relative!important;
-	top: 100px!important;
+	top: 80px!important;
     left: 10px!important;
-	width: 406px;
-    height: 406px;
+	width: 506px;
+    height: 506px;
 
 }
 
 .titulo {
 	position: absolute!important;
-	bottom: 350px!important;
+	bottom: 450px!important;
     left: 30px!important;
     font-family:CalcitePro-Black!important;
     font-size: 66pt!important;
@@ -29,6 +29,16 @@
     text-transform: none!important;
 }
 
+.titulo2 {
+	position: absolute!important;
+	top: 690px!important;
+    left: 30px!important;
+    font-family:TheMixB-W8ExtraBold!important;
+    font-size: 20pt!important;
+    color: rgb(254,197,61)!important;
+    width: 1150px!important;
+    text-transform: none!important;
+}
 
 .fondo-aviso{
     
@@ -39,7 +49,7 @@
 
 .texto-aviso{
     position: absolute!important;
-	top: 50px!important;
+	top: 70px!important;
     left: 300px!important;
     width: 606px!important;
 	height: 434px!important;
@@ -48,15 +58,15 @@
 .texto-p{
     
     position: absolute!important;
-    top: 50px!important;
-    left: 10px!important;
+    top: 70px!important;
+    left: 15px!important;
     font-size: 22px!important;
     color: rgb(103,44,17)!important;
     font-family: TheMixB-W6SemiBold!important;
-    text-align: justify!important;
+    text-align: left!important;
 }
 .titulo-aviso{
-    font-size: 33px!important;
+    font-size: 33pt!important;
     color: rgb(103,44,17)!important;
     font-family: TheMixB-W9Black!important;
     
@@ -65,7 +75,7 @@
 .btn-acepto {
 	position: absolute!important;
 	top: 400px!important;
-	left: 300px!important;
+	left: 320px!important;
 	height: 84px!important;
 	width: 232px!important;
 	-webkit-border-radius: 0!important;
@@ -83,7 +93,7 @@
 .btn-noacepto {
 	position: absolute!important;
 	top: 400px!important;
-	left: 50px!important;
+	left: 30px!important;
 	height: 84px!important;
 	width: 232px!important;
 	-webkit-border-radius: 0!important;
@@ -100,27 +110,14 @@
 
 .escribe-img{
     position: absolute!important;
-    right: 940px!important;
-    bottom: 350px!important;
+    left: 30px!important;
+    bottom: 330px!important;
+    height: 67px!important;
+    width: 800px!important;
 }
 
 
-.select{
-	position: absolute!important;
-	top: 10000px!important;
-	display: hidden!important;
-}
 
-.stretch{
-	border-radius:100% !important;
-	overflow: hidden!important;
-	position: relative!important;
-	bottom: 10px!important;
-	left: 120px!important;
-	width:500px!important; 
-	height:500px!important;
-	z-index: 1!important;
-}
 
 input[type=email] {
 	position: relative!important;
@@ -142,63 +139,46 @@ input[type=email] {
 .btn-regresar {
 	position: absolute!important;
 	bottom: 60px!important;
-	left: 20px!important;
+	left: 300px!important;
 	height: 84px!important;
 	width: 232px!important;
 	-webkit-border-radius: 0!important;
 	-moz-border-radius: 0!important;
 	border-radius: 1px!important;
 	padding: 10px 50px 10px 50px!important;
-	background: url('../assets/regresar1.png') no-repeat!important;
+	background: url('../assets/noenviar1.png') no-repeat!important;
 
 }
 
 .btn-regresar:hover {
-	background: url('../assets/regresar2.png') no-repeat!important;
+	background: url('../assets/noenviar2.png') no-repeat!important;
 }
 .btn-continuar {
 	position: absolute!important;
 	bottom: 60px!important;
-	right: 20px!important;
+	right: 300px!important;
 	height: 84px!important;
 	width: 232px!important;
 	-webkit-border-radius: 0!important;
 	-moz-border-radius: 0!important;
 	border-radius: 1px!important;
 	padding: 10px 50px 10px 50px!important;
-	background: url('../assets/continuar1.png') no-repeat!important;
+	background: url('../assets/enviar1.png') no-repeat!important;
 
 }
 
 .btn-continuar:hover {
-	background: url('../assets/continuar2.png') no-repeat!important;
+	background: url('../assets/enviar2.png') no-repeat!important;
 }
 
 
-.btn-tomar-regresar {
-	position: absolute!important;
-	top: 600px!important;
-	left: 100px!important;
-	height: 84px!important;
-	width: 232px!important;
-	-webkit-border-radius: 0!important;
-	-moz-border-radius: 0!important;
-	border-radius: 1px!important;
-	padding: 10px 50px 10px 50px!important;
-	background: url('../assets/regresar1.png') no-repeat!important;
-
-}
-
-.btn-tomar-regresar:hover {
-	background: url('../assets/regresar2.png') no-repeat!important;
-}
 
 
 .foto-silueta{
     position: relative!important;
     bottom: 200px !important;
     right: 300px !important;
-    z-index: 2;
+    z-index: 2!important;
 
 }
 
@@ -206,8 +186,8 @@ input[type=email] {
 	position: absolute!important;
 	top: 550px!important;
 	left: 550px!important;
-	height: 116px!important;
-	width: 116px!important;
+	height: 117px!important;
+	width: 126px!important;
 	border-top: none;
 	border-left: none;
 	border-right: none;
@@ -220,7 +200,23 @@ input[type=email] {
 	background: url('../assets/camara2.png') no-repeat!important;
 }
 
+.select{
+	position: absolute!important;
+	top: 10000px!important;
+	display: hidden!important;
+}
 
+.stretch{
+	border-radius:100% !important;
+	overflow: hidden!important;
+	position: relative!important;
+	bottom: 10px!important;
+	left: 120px!important;
+	width:700px!important; 
+	height:500px!important;
+	z-index: 1!important;
+	padding-top:30px!important;
+}
 
 
 #videoElement {
