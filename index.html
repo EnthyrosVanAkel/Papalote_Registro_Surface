@@ -67,7 +67,7 @@
 
         <section data-background="assets/fondo.png" class="center">
           <img src="assets/instruccion1.png" class="escribe-img">
-          <input type="email" name="correo" class="correo" placeholder="Escribe aquí tu correo electrónico">
+          <input type="email" name="correo" id="correo" placeholder="Escribe aquí tu correo electrónico">
           <a class="btn btn-regresar" onclick="backSlide();"></a>
           <a class="btn btn-continuar" onclick="ObtenerDatos();"></a>
         </section>
@@ -92,12 +92,12 @@
 
         <section data-background="assets/fondo.png" class="center">
           <img src="assets/instruccion2.png" class="foto-repetir">
-          <h2 class='texto-final'>¡Bien, Nombre, estas list@ para la aventura!</h2>
+          <h2 class='texto-final'>¡Bien, Estamos listos para la aventura!</h2>
 
             <canvas id="canvas" style="border-radius:100%!important;" width="500" height="500"></canvas>
  
-            <a class="btn btn-si" onclick="backPhoto();"></a>
-          <a class="btn btn-no" onclick="fin();"></a>
+            <a class="btn-si" onclick="backPhoto();"></a>
+          <a class="btn-no" onclick="fin();"></a>
         </section>
 
       </div>
@@ -131,81 +131,39 @@
     <script>
 
 
-    //Facebook and Twitter login
+    // Registrar
 
-    var signup = {};
-    var baseUrl = 'http://cocoplan.mx:9000/';
-    var rfid;
+    var baseUrl = 'http://papalote.cocoplan.mx';
+    
     var rfid1;
-
-    function nextSlide(){
-      Reveal.next();
-    }
-
-    (function(){
-    
-    this.loginOauth = function(provider){
-      el = document.getElementById("overlay");
-      el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-      alert(rfid);
-
-        var htmlIf = '<iframe id="if-login" onload="loadIF(this.contentWindow.location);" src="'+baseUrl+'auth/'+provider+'/'+rfid+'" width="500px" height="320px" style="position:absolute;top:-50px"></iframe>';
-        document.getElementById('overlay').innerHTML = htmlIf;
-
-        console.log(htmlIf);
-    }
-
-    }).apply(signup);
-
-    function loadIF(url){
-    
-      if(url == baseUrl){
-          $.get(baseUrl+'api/visitors/'+rfid, function(data) {
-              /*optional stuff to do after success */
-              console.log(data);
-              alert(JSON.stringify(data));
-          });
-
-          document.getElementById('if-wrap').innerHTML = '';
-          // document.getElementById('if-wrap').style.display = 'none';
-      }
-    }
-
-    function overlay() {
-      el = document.getElementById("overlay");
-      el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-    }
+    var name;
+    var genere;
+    var correo;
+    var age;
+    var context;
 </script>
 <script>
 
     //Initialize RFID Reader
-
-    if (Reveal.isFirstSlide())
-    {
-
+      if (Reveal.isFirstSlide()){
+         console.log(Reveal.isFirstSlide());
       var socket = io.connect("http://localhost:1235");
-
-      socket.on("rfid", function (data)
-        { 
-            rfid1 = data.rfid;
-            rfid = rfid1.replace(/\W/g,'');
-            console.log(rfid)
-            Reveal.next();
+      socket.on("rfid", function (data){
+        if(Reveal.isFirstSlide() == true){
+            rfid1 = data.rfid.toString();
+            console.log(rfid1);
+              Reveal.next();
+            }            
         });
 
       
     }else{
-      var socket = io.connect("http://localhost:1235");
-      socket.on("rfid", function (data)
-      {
-
-      });
       socket.on("refresh", function (data){
         console.log("time to reload");
          location.reload();
       });
-
     }
+   
 
 </script>
 
@@ -217,13 +175,40 @@
       Reveal.prev();
     }
 
+   
+
+    function ObtenerDatos(){
+      correo = document.getElementById("correo").value;
+      $.getJSON(baseUrl+'/visitante',{email:correo} ,function(jd) {
+        console.log(jd);
+        name = jd.nombre;
+        genere = jd.genero;
+        age = jd.edad;
+        // variavles
+        console.log(name);
+        console.log(genere);
+        console.log(age);
+        console.log(rfid1);
+        if(genere == 'M'){
+          l = 'o';
+        }
+        else{
+          l = 'a';
+        }
+        $('.texto-final').replaceWith("<h2 class='texto-final'>¡Bien, " + name + ", estás list"+ l + " para la aventura!</h2>");
+      });
+      nextSlide();
+    }
+
 
     function home(){
       Reveal.slide(0);
       start();
+      $('#correo').val("");
+      // rersetea etxto inicial
+      $('.texto-final').replaceWith("<h2 class='texto-final'>¡Bien, Estamos listo para la aventura!</h2>");
       //Esconde 
       $(".texto-final").css("display","none");
-      $("#home").css("display","none");
       //muestra
       $(".foto-repetir").css("display","block");
       $(".btn-no").css("display","block");
@@ -236,14 +221,17 @@
     }
 
     function fin(){
+      $.post( baseUrl+'/nuevo', { email: correo, nombre: name,edad: age, genero:genere,rfid:rfid1,foto: 'https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png'}, function(data) {
+        console.log(data);
+    });
       //Muestra 
       $(".texto-final").css("display","block");
-      $("#home").css("display","block");
       //Esconde
       $(".foto-repetir").css("display","none");
       $(".btn-no").css("display","none");
       $(".btn-si").css("display","none");
 
+      setTimeout(function(){home()},5000);
     }
     </script>
 
@@ -254,7 +242,7 @@
     var videoElement = document.querySelector('video');
     var audioSelect = document.querySelector('select#audioSource');
     var videoSelect = document.querySelector('select#videoSource');
-    var context = canvas.getContext("2d");
+    context = canvas.getContext("2d");
 
     navigator.getUserMedia = navigator.webkitGetUserMedia;
     navigator.getUserMedia = navigator.getUserMedia ||
