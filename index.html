@@ -86,7 +86,6 @@
             <video class="stretch" muted autoplay></video>
               <img src="assets/cara.png" class="foto-silueta">
               <button id="snap" onclick="nextSlide();"></button>
-
               <h2 class='texto-foto'>Coloca tu cara dentro de la silueta y toca la cámara.</h2>
 
         </section>
@@ -209,6 +208,45 @@
     }
 
 </script>
+
+<script>
+      function nextSlide(){
+      Reveal.next();
+    }
+    function backSlide(){
+      Reveal.prev();
+    }
+
+
+    function home(){
+      Reveal.slide(0);
+      start();
+      //Esconde 
+      $(".texto-final").css("display","none");
+      $("#home").css("display","none");
+      //muestra
+      $(".foto-repetir").css("display","block");
+      $(".btn-no").css("display","block");
+      $(".btn-si").css("display","block");
+    }
+
+    function backPhoto(){
+      start();
+      Reveal.prev();
+    }
+
+    function fin(){
+      //Muestra 
+      $(".texto-final").css("display","block");
+      $("#home").css("display","block");
+      //Esconde
+      $(".foto-repetir").css("display","none");
+      $(".btn-no").css("display","none");
+      $(".btn-si").css("display","none");
+
+    }
+    </script>
+
 <script>
     // Camera 
     'use strict';
@@ -284,7 +322,7 @@
     start();
 
     document.getElementById("snap").addEventListener("click", function() {
-      context.drawImage(videoElement, 0, 0, 640, 480);
+      context.drawImage(videoElement, 0, 0, 640, 500);
     });
 
 
