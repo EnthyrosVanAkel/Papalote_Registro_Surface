@@ -221,9 +221,27 @@
     }
 
     function fin(){
-      $.post( baseUrl+'/nuevo', { email: correo, nombre: name,edad: age, genero:genere,rfid:rfid1,foto: 'https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png'}, function(data) {
-        console.log(data);
-    });
+      //var c = document.getElementById('photo'); // Canvas
+      //var v = document.getElementById('camFeed'); // Camera
+      //var context2d = c.getContext('2d');
+      // context2d.drawImage(v, 0, 0, 320, 240);
+      var dataUrl = canvas.toDataURL('image/png');
+      var blob = dataUriToBlob(dataUrl);
+      var form = new FormData();
+
+      form.append('email', correo);
+      form.append('nombre', name);
+      form.append('edad', age);
+      form.append('genero', genere);
+      form.append('rfid', rfid1);
+      form.append('foto', blob);
+
+      sendForm(form)
+
+     // $.post( baseUrl+'/nuevo', { email: correo, nombre: name,edad: age, genero:genere,rfid:rfid1,foto: 'https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png'}, function(data) {
+       // console.log(data);
+      //});
+
       //Muestra 
       $(".texto-final").css("display","block");
       //Esconde
@@ -233,7 +251,48 @@
 
       setTimeout(function(){home()},5000);
     }
-    </script>
+
+
+    function sendForm(form){
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST',baseUrl+'/nuevo', true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    alert('Success: ' + xhr.responseText);
+                } else {
+                    alert('Error submitting image: ' + xhr.status);
+                }
+            }
+        };
+      xhr.send(form);
+    }
+
+
+    function dataUriToBlob(dataURI) {
+        // serialize the base64/URLEncoded data
+        var byteString;
+        if (dataURI.split(',')[0].indexOf('base64') >= 0) {
+            byteString = atob(dataURI.split(',')[1]);
+        }
+        else {
+            byteString = unescape(dataURI.split(',')[1]);
+        }
+        // parse the mime type
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+        // construct a Blob of the image data
+        var array = [];
+        for(var i = 0; i < byteString.length; i++) {
+            array.push(byteString.charCodeAt(i));
+        }
+        var arrayBufferView = new Uint8Array(array);
+        return new Blob(
+            [arrayBufferView],
+            {type: mimeString}
+        );
+    }
+
+</script>
 
 <script>
     // Camera 
