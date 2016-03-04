@@ -174,13 +174,7 @@ input[type=email] {
 
 
 
-.foto-silueta{
-    position: relative!important;
-    bottom: 200px !important;
-    right: 300px !important;
-    z-index: 2!important;
 
-}
 
 #snap {
 	position: absolute!important;
@@ -205,23 +199,29 @@ input[type=email] {
 	top: 10000px!important;
 	display: hidden!important;
 }
+.foto-silueta{
+    position: absolute!important;
+    bottom: 150px !important;
+    right: 450px !important;
+    width: 300px!important;
+    z-index: 2!important;
+
+}
 
 .stretch{
-	border-radius:100% !important;
-	overflow: hidden!important;
+	/*border-radius:50% !important;*/
 	position: relative!important;
-	bottom: 10px!important;
-	left: 120px!important;
-	width:700px!important; 
+	bottom: 30px!important;
+	left: 10px!important;
+	width:660px!important; 
 	height:500px!important;
 	z-index: 1!important;
-	padding-top:30px!important;
 }
 
 
 #videoElement {
 	
-    width: 500px!important;
+    width: 660px!important;
     height: 500px!important;
 }
 
