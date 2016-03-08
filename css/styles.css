@@ -178,14 +178,15 @@ input[type=email] {
 
 #snap {
 	position: absolute!important;
-	top: 550px!important;
+	top: 580px!important;
 	left: 550px!important;
 	height: 117px!important;
 	width: 126px!important;
 	border-top: none;
 	border-left: none;
 	border-right: none;
-	border-bottom:none; 
+	border-bottom:none;
+	z-index: 2!important; 
 	background: url('../assets/camara1.png') no-repeat!important;
 
 }
@@ -201,21 +202,30 @@ input[type=email] {
 }
 .foto-silueta{
     position: absolute!important;
-    bottom: 150px !important;
-    right: 450px !important;
-    width: 300px!important;
+    top: 100px !important;
+    left: 450px!important;
+    max-width: 600px!important;
+    max-height: 400px!important;
     z-index: 2!important;
 
 }
 
+.calado{
+	position: absolute!important;
+	top: -180px !important;
+    right: -80px !important;
+	z-index: 1!important;
+	max-height: 1200px!important;
+    max-width: 1400px!important;
+}
 .stretch{
 	/*border-radius:50% !important;*/
-	position: relative!important;
-	bottom: 30px!important;
-	left: 10px!important;
-	width:660px!important; 
-	height:500px!important;
-	z-index: 1!important;
+	position: absolute!important;
+	top: 10px!important;
+	left:80px!important;
+	width:1080px!important; 
+	height:720px!important;
+	z-index: 0!important;
 }
 
 
@@ -235,6 +245,7 @@ input[type=email] {
     color: rgb(254,197,61)!important;
      height: 40px!important;
      text-transform: none!important;
+     z-index: 2!important;
 }
 
 
@@ -295,7 +306,7 @@ input[type=email] {
 .texto-final {
 	position: absolute!important;
 	bottom: 10px!important;
-    left: 150px!important;
+    left: 280px!important;
     font-size: 45px !important;
    font-family:TheMixB-W8ExtraBold!important;
     color: rgb(254,197,61)!important;

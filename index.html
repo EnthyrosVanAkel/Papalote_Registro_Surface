@@ -73,7 +73,7 @@
         </section>
 
         <section data-background="assets/fondo.png" class="center">
-
+          <img src="assets/calado.png" class="calado">
           <div class="select">
                 <label for="audioSource">Audio source: </label><select id="audioSource"></select>
               </div>
@@ -92,7 +92,7 @@
 
         <section data-background="assets/fondo.png" class="center">
           <img src="assets/instruccion2.png" class="foto-repetir">
-          <h2 class='texto-final'>¡Bien, Estamos listos para la aventura!</h2>
+          <h2 class='texto-final'>¡Estamos listos para la aventura!</h2>
 
             <canvas id="canvas" style="border-radius:100%!important;" width="500" height="500"></canvas>
  
@@ -196,7 +196,7 @@
         else{
           l = 'a';
         }
-        $('.texto-final').replaceWith("<h2 class='texto-final'>¡Bien, " + name + ", estás list"+ l + " para la aventura!</h2>");
+        $('.texto-final').replaceWith("<h2 class='texto-final'>¡" + name + ", estás list"+ l + " para la aventura!</h2>");
       });
       nextSlide();
     }
@@ -207,7 +207,7 @@
       start();
       $('#correo').val("");
       // rersetea etxto inicial
-      $('.texto-final').replaceWith("<h2 class='texto-final'>¡Bien, Estamos listo para la aventura!</h2>");
+      $('.texto-final').replaceWith("<h2 class='texto-final'>¡Estamos listos para la aventura!</h2>");
       //Esconde 
       $(".texto-final").css("display","none");
       //muestra
@@ -250,7 +250,7 @@
       $(".btn-no").css("display","none");
       $(".btn-si").css("display","none");
 
-      setTimeout(function(){home()},5000);
+     // setTimeout(function(){home()},3000);
     }
 
 
@@ -370,7 +370,7 @@
     start();
 
     document.getElementById("snap").addEventListener("click", function() {
-      context.drawImage(videoElement, 0, 0, 660, 500);
+      context.drawImage(videoElement, -80, 0, 660, 500);
     });
 
 
