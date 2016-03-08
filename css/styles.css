@@ -305,7 +305,7 @@ input[type=email] {
 
 .texto-final {
 	position: absolute!important;
-	bottom: 10px!important;
+	top: 10px!important;
     left: 280px!important;
     font-size: 45px !important;
    font-family:TheMixB-W8ExtraBold!important;
