@@ -253,6 +253,20 @@
      // setTimeout(function(){home()},3000);
     }
 
+    $(function() {
+    var $elie = $(".papalote-logo");
+    rotate(0);
+    function rotate(degree) {        
+        //$elie.css({ '-webkit-transform': 'rotate(' + degree + 'deg)'});  
+        //$elie.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});
+        //elie.css({ '-ms-transform': 'rotate(' + degree + 'deg)'});
+        //elie.css({ '-o-transform': 'rotate(' + degree + 'deg)'});
+        $elie.css({ 'transform': 'rotate(' + degree + 'deg)'});                      
+        timer = setTimeout(function() {
+            rotate(++degree);
+        },.001);
+    }
+});
 
     function sendForm(form){
       var xhr = new XMLHttpRequest();
