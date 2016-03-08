@@ -250,7 +250,7 @@
       $(".btn-no").css("display","none");
       $(".btn-si").css("display","none");
 
-     // setTimeout(function(){home()},3000);
+     setTimeout(function(){home()},3000);
     }
 
     $(function() {
@@ -274,9 +274,9 @@
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                    alert('Success: ' + xhr.responseText);
+                    console.log('Success: ' + xhr.responseText);
                 } else {
-                    alert('Error submitting image: ' + xhr.status);
+                    console.log('Error submitting image: ' + xhr.status);
                 }
             }
         };

@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "main": "index.html",
   "window" : {
-    "toolbar": true,
+    "toolbar": false,
     "position": "center",
-    "fullscreen": false,
+    "fullscreen": true,
     "resizable": true,
     "width": 1920,
     "height": 1030
