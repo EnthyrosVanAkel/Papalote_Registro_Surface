@@ -46,8 +46,9 @@
               <h1 class="titulo">¡Prepárate para la aventura!</h1>
             </p>
           </div>
-        <img src="assets/mariposa.png" class="papalote-logo"> 
-        <img src="assets/rfid.png" class="scan-img"> 
+        <img src="assets/mariposa/1.png" class="papalote-logo" id="mariposa">
+        <!-- <img src="assets/mariposa.png" class="papalote-logo"> --> 
+        <img src="assets/rfid/1.png" class="scan-img" id="rfid"> 
         <h2 class="titulo2">Pasa aquí tu brazalete.</h2>
         </section>
 
@@ -67,8 +68,8 @@
 
         <section data-background="assets/fondo.png" class="center">
           <img src="assets/instruccion1.png" class="escribe-img">
-          <input type="email" name="correo" id="correo" placeholder="Escribe aquí tu correo electrónico">
-          <a class="btn btn-regresar" onclick="backSlide();"></a>
+          <input type="email" name="correo" id="correo" placeholder="Escribe aquí tu correo electrónico (Opcional)">
+         <!-- <a class="btn btn-regresar" onclick="backSlide();"></a> -->
           <a class="btn btn-continuar" onclick="ObtenerDatos();"></a>
         </section>
 
@@ -85,13 +86,14 @@
 
             <video class="stretch" muted autoplay></video>
               <img src="assets/cara.png" class="foto-silueta">
-              <button id="snap" onclick="nextSlide();"></button>
+              <img src="assets/c3.png" class="banner">
+              <button id="snap" onclick="toma();"></button>
               <h2 class='texto-foto'>Coloca tu cara dentro de la silueta y toca la cámara.</h2>
 
         </section>
 
         <section data-background="assets/fondo.png" class="center">
-          <img src="assets/instruccion2.png" class="foto-repetir">
+          <img src="assets/instruccion3.png" class="foto-repetir">
           <h2 class='texto-final'>¡Estamos listos para la aventura!</h2>
 
             <canvas id="canvas" style="border-radius:100%!important;" width="500" height="500"></canvas>
@@ -129,6 +131,7 @@
     </script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://localhost:1235/socket.io/socket.io.js"></script>
+
     <script>
 
 
@@ -217,11 +220,19 @@
     }
 
     function backPhoto(){
+    $("#snap").css("display","block");
+    $(".texto-foto").css("display","block");
+    $(".banner").attr("src","assets/c3.png");
+    $(".banner").css("display","none");
       start();
       Reveal.prev();
     }
 
     function fin(){
+      $("#snap").css("display","block");
+      $(".texto-foto").css("display","block");
+      $(".banner").attr("src","assets/c3.png");
+      $(".banner").css("display","none");
       //var c = document.getElementById('photo'); // Canvas
       //var v = document.getElementById('camFeed'); // Camera
       //var context2d = c.getContext('2d');
@@ -242,7 +253,8 @@
      // $.post( baseUrl+'/nuevo', { email: correo, nombre: name,edad: age, genero:genere,rfid:rfid1,foto: 'https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png'}, function(data) {
        // console.log(data);
       //});
-
+      //Cambiar el fondo
+     // $('#simbolo').replaceWith("<section data-background='assets/fondo.png' class='center' id='simbolo'>");
       //Muestra 
       $(".texto-final").css("display","block");
       //Esconde
@@ -252,7 +264,7 @@
 
      setTimeout(function(){home()},3000);
     }
-
+/*
     $(function() {
     var $elie = $(".papalote-logo");
     rotate(0);
@@ -267,6 +279,12 @@
         },10);
     }
 });
+
+*/
+
+
+
+
 
     function sendForm(form){
       var xhr = new XMLHttpRequest();
@@ -308,6 +326,38 @@
     }
 
 </script>
+
+
+<script>
+function mariposa(){
+  var img = document.getElementById("mariposa");
+  url = "assets/mariposa/"+x+".png";
+  img.src = url;
+  x++;
+
+  if (x >= 50) {
+    x = 1;
+  }
+  setTimeout("mariposa()",90);
+}
+x = 1;
+setTimeout("mariposa()",90);
+
+function rfid(){
+  var img = document.getElementById("rfid");
+  url = "assets/rfid/"+y+".png";
+  img.src = url;
+  y++;
+
+  if (y >= 78) {
+    y = 1;
+  }
+  setTimeout("rfid()",100);
+}
+y = 1;
+setTimeout("rfid()",100);
+</script>
+
 
 <script>
     // Camera 
@@ -383,13 +433,40 @@
 
     start();
 
+    function toma(){
+      $("#snap").css("display","none");
+    $(".texto-foto").css("display","none");
+    $(".banner").css("display","block");
+      setTimeout(function(){
+      $(".banner").attr("src","assets/c2.png");
+    },1000);
+    setTimeout(function(){
+      $(".banner").attr("src","assets/c1.png");
+    },2000);
+    setTimeout(function(){
+      $(".banner").attr("src","assets/c0.png");
+    },3000);
+    setTimeout(function(){
+      cl();
+    },3500);
+    }
+
+function cl(){
+        context.drawImage(videoElement, -80, 0, 660, 500);
+        nextSlide();
+}
+
+/*
     document.getElementById("snap").addEventListener("click", function() {
-      context.drawImage(videoElement, -80, 0, 660, 500);
+    $("#snap").css("display","none");
+    $(".texto-foto").css("display","none");
+    $(".banner").css("display","block");
+    toma();
     });
 
-
+*/
     //
 
-    </script>s
+    </script>
   </body>
 </html>
