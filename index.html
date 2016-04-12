@@ -46,12 +46,14 @@
               <h1 class="titulo">¡Prepárate para la aventura!</h1>
             </p>
           </div>
-        <img src="assets/mariposa/1.png" class="papalote-logo" id="mariposa">
-        <!-- <img src="assets/mariposa.png" class="papalote-logo"> --> 
-        <img src="assets/rfid/1.png" class="scan-img" id="rfid"> 
+       <!--  <img src="assets/mariposa/1.png" class="papalote-logo" id="mariposa"> 
+        <img src="assets/mariposa.png" class="papalote-logo">-->
+        <img src="assets/rfid.png" class="scan-img"> 
+        <!--
         <h2 class="titulo2">Pasa aquí tu brazalete.</h2>
+      -->
         </section>
-
+<!--
         <section data-background="assets/fondo.png" class="center">
           <img src="assets/caja.png" class="fondo-aviso">
           <div class="texto-aviso">
@@ -69,11 +71,12 @@
         <section data-background="assets/fondo.png" class="center">
           <img src="assets/instruccion1.png" class="escribe-img">
           <input type="email" name="correo" id="correo" placeholder="Escribe aquí tu correo electrónico (Opcional)">
-         <!-- <a class="btn btn-regresar" onclick="backSlide();"></a> -->
+         <!-- <a class="btn btn-regresar" onclick="backSlide();"></a> --> <!--
           <a class="btn btn-continuar" onclick="ObtenerDatos();"></a>
         </section>
-
+-->
         <section data-background="assets/fondo.png" class="center">
+          <img src="assets/instruccion1.png" class="toma-foto">
           <img src="assets/calado.png" class="calado">
           <div class="select">
                 <label for="audioSource">Audio source: </label><select id="audioSource"></select>
@@ -88,12 +91,13 @@
               <img src="assets/cara.png" class="foto-silueta">
               <img src="assets/c3.png" class="banner">
               <button id="snap" onclick="toma();"></button>
-              <h2 class='texto-foto'>Coloca tu cara dentro de la silueta y toca la cámara.</h2>
+             <!--  <h2 class='texto-foto'>Coloca tu cara dentro de la silueta y toca la cámara.</h2>
 
+           -->
         </section>
 
         <section data-background="assets/fondo.png" class="center">
-          <img src="assets/instruccion3.png" class="foto-repetir">
+          <img src="assets/instruccion2.png" class="foto-repetir">
           <h2 class='texto-final'>¡Estamos listos para la aventura!</h2>
 
             <canvas id="canvas" style="border-radius:100%!important;" width="500" height="500"></canvas>
@@ -114,7 +118,7 @@
         controls: false,
         progress: false,
         history: true,
-        touch: false,
+        touch: true,
         center: false,
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
