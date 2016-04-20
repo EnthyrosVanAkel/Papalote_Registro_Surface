@@ -3,10 +3,18 @@
 
 .scan-img{
 	max-width: 100px!important;
-    max-height: 400px!important;
+    max-height: 450px!important;
     position: absolute!important;
     top: 550px!important;
     left: 550px!important;
+}
+
+#sprite{
+	position: absolute!important;
+	left: 470px!important;
+	top: 500px!important;
+	width: 240px!important;
+	height: 240px!important;
 }
 
 
@@ -33,7 +41,7 @@
 .titulo {
 	position: absolute!important;
 	/*bottom: 450px!important; */
-	top: -30px!important;
+	top: -10px!important;
     left: 30px!important;
     font-family:CalcitePro-Black!important;
     font-size: 66pt!important;

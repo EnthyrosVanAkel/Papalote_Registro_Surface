@@ -47,10 +47,10 @@
             </p>
           </div>
        <!--  <img src="assets/mariposa/1.png" class="papalote-logo" id="mariposa"> 
-        <img src="assets/mariposa.png" class="papalote-logo"> -->
-        <img src="assets/rfid.png" class="scan-img">
+        <img src="assets/mariposa.png" class="papalote-logo">
+        <img src="assets/rfid.png" class="scan-img"> -->
 
-       <!--  <canvas class="scan-img"></canvas> -->
+       <canvas id="sprite"></canvas>
       <!--
         <h2 class="titulo2">Pasa aquí tu brazalete.</h2>
       -->
@@ -182,7 +182,7 @@
 
 var spriteRFID = new SpriteCanvas({
     spriteSheet : 'img/rfid_sprite.png',
-    canvas      :  document.getElementById("scan-img"),
+    canvas      :  document.getElementById("sprite"),
     width       : 800,
     height      : 800,
     fps         : 24
