@@ -47,9 +47,11 @@
             </p>
           </div>
        <!--  <img src="assets/mariposa/1.png" class="papalote-logo" id="mariposa"> 
-        <img src="assets/mariposa.png" class="papalote-logo">-->
-        <img src="assets/rfid.png" class="scan-img"> 
-        <!--
+        <img src="assets/mariposa.png" class="papalote-logo"> -->
+        <img src="assets/rfid.png" class="scan-img">
+
+       <!--  <canvas class="scan-img"></canvas> -->
+      <!--
         <h2 class="titulo2">Pasa aquí tu brazalete.</h2>
       -->
         </section>
@@ -111,6 +113,7 @@
     </div>
   <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
+    <script type="text/javascript" src="js/spritesCanvas.js"></script>
     <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
@@ -118,7 +121,7 @@
         controls: false,
         progress: false,
         history: true,
-        touch: true,
+        touch: false,
         center: false,
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
@@ -176,6 +179,19 @@
 </script>
 
 <script>
+
+var spriteRFID = new SpriteCanvas({
+    spriteSheet : 'img/rfid_sprite.png',
+    canvas      :  document.getElementById("scan-img"),
+    width       : 800,
+    height      : 800,
+    fps         : 24
+  });
+
+
+  spriteRFID.play();
+
+
       function nextSlide(){
       Reveal.next();
     }
